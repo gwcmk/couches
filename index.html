@@ -1,0 +1,42 @@
+<html lang="en">
+	<head>
+		<title>COUCHES</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="info" style="display:flex;justify-content:center;align-items:center;">
+			<div>
+				<h1>COUCHES</h1>
+				<h3><a href="https://twitter.com/gwcmk" target="_blank">@gwcmk</a></h3>
+			</div>
+		</div>
+		
+		<audio id="intro" src="audio/intro.mp3" autoplay>
+			<p>Your browser sucks.</p>
+		</audio>
+		
+		<script type="text/javascript" src="js/SeamlessLoop.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				var loop = new SeamlessLoop();
+			    loop.addUri("audio/couches.ogg", 1633, "sound1");
+
+			    $("#intro").bind('ended', function(){
+				    loop.start("sound1");
+				    window.setInterval(function(){
+						addImage();
+					}, 350);
+				});	
+			});
+
+			function addImage() {
+				var file = Math.floor(Math.random() * 9) + 1;
+				var top = Math.floor(Math.random() * 70);
+				var left = Math.floor(Math.random() * 70);
+				$('body').append('<img src="img/' + file + '.jpg" style="position:absolute;top:' + top + 'vh;left:' + left + 'vw">')
+			}
+		</script>
+	</body>
+</html>

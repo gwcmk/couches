@@ -1,0 +1,21 @@
+body {
+	font-family: 'Helvetica';
+	font-size: 2rem;
+}
+
+img {
+	max-width: 30vw;
+	position: absolute;
+	left: 10vw;
+	top: 10vh;
+}
+
+#info {
+	width: 100vw;
+	height: 100vh;
+}
+
+#info div {
+	text-align: center;
+	vertical-align: middle;
+}
